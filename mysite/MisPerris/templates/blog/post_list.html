@@ -1,60 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mis Perris</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'styles/blog.css' %}">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-</head>
-    <body>
-
-        <div class="page-header">
-            {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            {% endif %}
-            <h1 class="icon-dog"><a href="/">Mis Perris</a></h1>
-            <input type="checkbox" id="menu-bar">
-                <label class="icon-menu" for="menu-bar"></label>
-                <nav class="menu">
-                    <a href="#">Inicio</a>
-                    <a href="#">Registro</a>
-                    <a href="#">Contacto</a>
-                </nav>
-        </div>
-
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    
-                       
-                    {% block content %}
-                        {% for post in posts %}
-                        <div class="post">
-                            <div class="date">
-                                {{ post.published_date }}
-                            </div>
-                            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-                            <p>{{ post.text|linebreaksbr }}</p>
-                        </div>
-                        {% endfor %}
-                    {% endblock %}
-                </div>
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
             </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <footer class="footer">
-            <div class="social">
-                <a href="" class="icon-facebook"></a>
-                <a href="" class="icon-twitter"></a>
-                <a href="" class="icon-gplus"></a>
-            </div>
-            <p class="copy">&copy; Mis perris 2018 - Todos los derechos reservados. </p>
-        </footer>
-        
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
