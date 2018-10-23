@@ -270,3 +270,17 @@ header label{  /*icono rig*/
     }
 
 }
+
+/*Prueba */
+.post {
+    margin-bottom: 70px;
+}
+.date {
+    float: right;
+    color: #828282;
+}
+
+.comentarios{
+    margin: 30px;
+}
+

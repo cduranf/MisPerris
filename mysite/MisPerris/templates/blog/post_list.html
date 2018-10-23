@@ -4,28 +4,28 @@
         <div class="slideshow">
             <ul class="slider">
                 <li>
-                    <img src="img/1.jpg" alt="Contando Experiencias">
+                    <img src="{% static 'img/1.jpg' %}" alt="Contando Experiencias">
                     <section class="caption">
                         <h2>Familia Perez</h2>
                         <p>Estamos felices de haber podido adoptar, nos ha hecho muy feliz</p>
                     </section>
                 </li>
                 <li>
-                    <img src="img/2.jpg" alt="Contando Experiencias">
+                    <img src="{% static 'img/2.jpg' %}" alt="Contando Experiencias">
                     <section class="caption">
                         <h2>Familia Sanchez</h2>
                         <p>feliz de haber adoptado a tom, salimos para todos lados</p>
                     </section>
                 </li>
                 <li>
-                    <img src="img/3.jpg" alt="Contando Experiencias">
+                    <img src="{% static 'img/3.jpg' %}" alt="Contando Experiencias">
                     <section class="caption">
                         <h2>Familia Gonzales</h2>
                         <p>Feliz de poder haberlo rescatado</p>
                     </section>
                 </li>
                 <li>
-                    <img src="img/4.jpg" alt="Contando Experiencias">
+                    <img src="{% static 'img/4.jpg' %}" alt="Contando Experiencias">
                     <section class="caption">
                         <h2>Familia Fuentes</h2>
                         <p>Cada dia nos hace mas feliz</p>
@@ -54,31 +54,33 @@
         <div class="contenedor">
             <section class="info">
                 <div class="info__columna">
-                    <img src="img/img1.jpeg" alt="Perritos Rescatados" class="info__img">
+                    <img src="{% static 'img/img1.jpeg' %}" alt="Perritos Rescatados" class="info__img">
                     <h2 class="info__titulo">Tom</h2>
                     <p class="info__txt">Fue rescatado de una familia que no alimentaba y estaba en mal estado.</p>
                 </div>
                 <div class="info__columna">
-                    <img src="img/img3.jpg" alt="Perritos Rescatados" class="info__img">
+                    <img src="{% static 'img/img3.jpg' %}" alt="Perritos Rescatados" class="info__img">
                     <h2 class="info__titulo">Blacky</h2>
                     <p class="info__txt">Fue encontrado cerca de un basurero con mas perritos que estaban en mal estado.</p>
                 </div>
                 <div class="info__columna">
-                    <img src="img/img4.jpg" alt="Perritos Rescatados" class="info__img">
+                    <img src="{% static 'img/img4.jpg' %}" alt="Perritos Rescatados" class="info__img">
                     <h2 class="info__titulo">Duke</h2>
                     <p class="info__txt">Una familia lo trajo a la fundacion porque lo encontraron en la calle.</p>
                 </div>
             </section>
         </div>
-</main>
-
     {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                <p>published: {{ post.published_date }}</p>
-            </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+    
+    <div class="post">
+        <div class="date">
+            <p>published: {{ post.published_date }}</p>
         </div>
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+    </br>
+        <p class="comentarios">{{ post.text|linebreaksbr }}</p>
+    </div>
     {% endfor %}
+</main>
+    
 {% endblock %}
