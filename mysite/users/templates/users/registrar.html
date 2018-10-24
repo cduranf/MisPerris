@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'styles/registro.css' %}">
+</head>
+<div class="container">
+    <div class="form__top">
+        <h2>Formulario <span>Registro</span></h2>
+    </div>		
+    <form class="form__reg">
+        <input id="txtNombre" class="input" type="text" maxlength="15" minlength="15" placeholder="&#128100;  Nombre" required>
+        <input class="input" type="email" placeholder="&#9993;  Email" required>
+        <input class="input" type="text" maxlength="10" minlength="6" placeholder="&#128100; Passwd" required autofocus>
+        <div class="btn__form">
+            <input class="btn__submit" type="submit" value="REGISTRAR">
+            <input class="btn__reset" type="reset" value="LIMPIAR">	
+        </div>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Ya tienes una cuenta? <a href="" class="text">Ingresa</a>
+            </small>
+        </div>
+    </form> 
+</div>
+
+
+{% endblock content %}
