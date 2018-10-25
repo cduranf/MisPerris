@@ -11,7 +11,7 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(
                 request, f'Tu cuenta ha sido creada, ahora pueden iniciar sesión')
-            return redirect('post_list')
+            return redirect('login')
     else:
         form = UserRegisterForm()
 

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'cduranf.pythonanywhere.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'crispy_forms',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -114,6 +115,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = "/login"
 
 
 # Static files (CSS, JavaScript, Images)

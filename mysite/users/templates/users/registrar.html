@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'styles/registro.css' %}">
 </head>
 <div class="container">
-    
+    {% csrf_token %}
     <div class="form__top">
         <h2>Formulario <span>Registro</span></h2>
     </div>		
@@ -21,7 +21,7 @@
         </div>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Ya tienes una cuenta? <a href="" class="text">Ingresa</a>
+                Ya tienes una cuenta? <a href="{% url 'login' %}" class="text">Ingresa</a>
             </small>
         </div>
     </form> 
