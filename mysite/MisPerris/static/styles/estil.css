@@ -182,6 +182,20 @@ header label{  /*icono rig*/
     height: 50px;
     line-height: 40px;
 }
+
+.button {
+    color: black;
+    padding: 1em 2em;
+    margin: 1em;
+    border: 0;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+    transition: 0.5s;
+    color: whitesmoke;
+}
 /*------Responsive----- */
 
 @media screen and (min-width:480px){
