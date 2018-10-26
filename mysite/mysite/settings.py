@@ -25,7 +25,7 @@ SECRET_KEY = '2_&#e311&m9_=dentmgggcip%)lc#=9aycc=y&#s)#!%+@-t-g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','cduranf.pythonanywhere.com']
 
 
 # Application definition
@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['127.0.0.1','.pythonanywhere.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'crispy_forms',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
