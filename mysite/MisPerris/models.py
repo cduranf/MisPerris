@@ -1,20 +1,25 @@
 from django.db import models
 from django.utils import timezone
+#prueba
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(
-            default=timezone.now)
-    published_date = models.DateTimeField(
-            blank=True, null=True)
+    
+    ESTADO = (
+        ('Espera', 'Espera'),
+        ('Adoptado', 'Adoptado'),
+    )
 
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
+    Nombre = models.CharField(max_length=100)
+    Raza = models.CharField(max_length=100)
+    Caracteristicas= models.TextField()
+    estado = models.TextField(choices=ESTADO, default='Espera')
+    picture = models.ImageField(
+        upload_to='user_pics', default='default.jpg')
 
     def __str__(self):
-        return self.title
+        return self.Nombre
+
 # Create your models here.
+
