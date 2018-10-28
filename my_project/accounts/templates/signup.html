@@ -1,22 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}Sign Up{% endblock %}
-{% load static %}
+
 {% block content %}
-<head>
-    <link rel="stylesheet" href="{% static 'styles/registro.css' %}">
-</head>
-<div class="container">
   <h2>Sign up</h2>
-  <form method="POST">
+  <form method="post">
     {% csrf_token %}
-    <div class="form__reg">
-      <input id="txtNombre" class="input" type="text" maxlength="15" minlength="15" placeholder="&#128100;  Nombre" required>
-      <input class="input" type="email" placeholder="&#9993;  Email" required>
-      <input class="input" type="password" maxlength="10" minlength="6" placeholder="&#128100; Passwd" required>
-      <input class="input" type="password" maxlength="10" minlength="6" placeholder="&#128100; Passwd" required>
-      <button type="submit">Registrate</button>
-  </div>
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
   </form>
-</div>
 {% endblock %}
