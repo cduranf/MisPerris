@@ -5,8 +5,9 @@ from django.utils import timezone
 class Perro(models.Model):
     
     ESTADO = (
-        ('Espera', 'Espera'),
-        ('Adoptado', 'Adoptado'),
+        ('Rescatado', 'Rescatado'),
+        ('Disponible', 'Disponible'),
+        ('Adoptado','Adoptado'),
     )
 
     Nombre = models.CharField(max_length=100)
