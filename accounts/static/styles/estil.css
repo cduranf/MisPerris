@@ -196,23 +196,6 @@ header label{  /*icono rig*/
     transition: 0.5s;
     color: whitesmoke;
 }
-
-/*---------------FORMULARIOS --------------------------- */
-.sign{
-    margin-top: 60px;
-}
-
-.fsign{
-    margin-top: 14px;
-}
-
-.olvida{
-    margin-top: 60px;
-}
-
-.folvida{
-    margin-top: 80px;
-}
 /*------Responsive----- */
 
 @media screen and (min-width:480px){

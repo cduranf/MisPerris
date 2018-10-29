@@ -1,6 +1,4 @@
 from django.db import models
-from django.utils import timezone
-
 
 class Perro(models.Model):
     
@@ -19,5 +17,3 @@ class Perro(models.Model):
 
     def __str__(self):
         return self.Nombre
-
-
