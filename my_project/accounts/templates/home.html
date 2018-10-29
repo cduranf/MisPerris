@@ -114,11 +114,11 @@
 </main>
 
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <p><a href="{% url 'password_reset' %}">reset password</a></p>
+  Bienvenido {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>
+  <p><a href="{% url 'password_reset' %}">Recuperar contraseña</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+  <p>No has iniciado sesión</p>
+  <a href="{% url 'login' %}">Iniciar sesión</a>
 {% endif %}
 {% endblock %}
