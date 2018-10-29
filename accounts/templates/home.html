@@ -115,10 +115,16 @@
 
 {% if user.is_authenticated %}
   Bienvenido {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>
-  <p><a href="{% url 'password_reset' %}">Recuperar contraseña</a></p>
+  <div class="container">
+        <p class="form__top"><a href="{% url 'logout' %}" class="btn__submit">Cerrar sesión</a></p>
+        <p class="form__top2"><a href="{% url 'password_reset' %}" class="btn__submit">Recuperar contraseña</a></p>
+  </div>
 {% else %}
-  <p>No has iniciado sesión</p>
-  <a href="{% url 'login' %}">Iniciar sesión</a>
+    <div class="container">
+        <p class="form__top">No has iniciado sesión</p>
+        <div class="btn__form">
+            <a href="{% url 'login' %}" class="btn__submit">Iniciar sesión</a>
+        </div>
+</div>
 {% endif %}
 {% endblock %}

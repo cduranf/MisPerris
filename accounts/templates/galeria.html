@@ -1,0 +1,27 @@
+
+
+<!-- {% extends 'base.html' %} -->
+<!-- 
+{% block title %}Ingreso{% endblock %}
+ -->
+ {% load static %}
+{% block content %}
+<!-- <head>
+    <link rel="stylesheet" href="{% static 'styles/registro.css' %}">
+</head> -->
+
+{% if perros %}
+   <div>
+    {% for perro in perros %}
+    <p>{{ perro.nombre }}</p>
+    <img src="{{ perro.picture.url }}" alt="">
+{% endfor %}
+   </div>
+{% else %}
+ <p>No hay perros</p>
+{% endif %}
+
+{% endblock %}
+
+
+

@@ -11,7 +11,7 @@ class Perro(models.Model):
     Nombre = models.CharField(max_length=100)
     Raza = models.CharField(max_length=100)
     Caracteristicas= models.TextField()
-    estado = models.TextField(choices=ESTADO, default='Espera')
+    estado = models.TextField(choices=ESTADO, default='Disponible')
     picture = models.ImageField(
         upload_to='user_pics', default='default.jpg')
 
