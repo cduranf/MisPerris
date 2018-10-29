@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}Regístrate{% endblock %}
-
+{% load static %}
 {% block content %}
-  <h2 class="sign">Registrarce</h2>
-  <form method="post" class="fsign">
+<head>
+  <link rel="stylesheet" href="{% static 'styles/registro.css' %}">
+</head>
+
+<div class="container">
+  <h2 class="form__top">Formulario<span>Registro</span></h2>
+  <form method="post" class="form__reg" >
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Regístrate</button>
+    <div class="btn__form">
+      <button type="submit" class="btn__submit">Regístrate</button>
+    </div>
   </form>
+</div>
 {% endblock %}

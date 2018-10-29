@@ -198,20 +198,31 @@ header label{  /*icono rig*/
 }
 
 /*---------------FORMULARIOS --------------------------- */
-.sign{
-    margin-top: 60px;
+.form__top {
+	width: 100%;
+	text-align: center;
+	padding: 2rem 0 1rem;
+	border-top: solid .4rem #F39B53;
+	margin-bottom: 1rem;
 }
-
-.fsign{
-    margin-top: 14px;
+.form__top2 {
+	width: 100%;
+	text-align: center;
+	padding: 0rem 0 1rem;
+	margin-bottom: 1rem;
 }
-
-.olvida{
-    margin-top: 60px;
-}
-
-.folvida{
-    margin-top: 80px;
+.btn__form {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1rem;
+} 
+.btn__submit{
+	background-color: #EFEFEF;
+	padding: .5rem;
+	margin: .5rem 0;
+	border: none;
+	border-bottom: solid #C8C8C8 .2rem;
+	transition: all .5s;
 }
 /*------Responsive----- */
 
